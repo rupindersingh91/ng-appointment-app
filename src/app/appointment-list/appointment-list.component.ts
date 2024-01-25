@@ -13,6 +13,7 @@ export class AppointmentListComponent {
 
   appointments: Appointment[] = []
 
+  // Add appointments
   addAppointment() {
     if (this.newAppointmentTitle.trim().length && this.newAppointmentDate) {
       // payload
@@ -27,9 +28,12 @@ export class AppointmentListComponent {
       // empty the fields
       this.newAppointmentTitle = "";
       this.newAppointmentDate = new Date();
-
-      alert(this.appointments.length);
     }
+  }
+
+  // delete appoinments
+  deleteAppointment(index: number) {
+    this.appointments.splice(index, 1);
   }
 
 }
